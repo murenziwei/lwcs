@@ -1,0 +1,389 @@
+<image src="{{imgsrc}}" class="xz_bg {{ani?'ac-left':''}}" bindload="loadfn" style="position:absolute;left:{{imgx*2}}px;top:{{imgy}};height:{{imgh}}px;width:{{imgw}}px;"/>
+<view class="xz_d" style="height:{{hh}}px;width:{{ww}}px;">
+   
+  <view class="xd_flex" tt:if="{{load}}">
+  
+    <swiper style="height:{{hh}}px;width:{{ww}}px;" indicator-dots="{{true}}" autoplay="{{true}}" interval="{{10000}}" duration="{{1000}}">
+        
+        <swiper-item>
+            <view class="si-flex" style="height:{{hh}}px;width:{{ww}}px;" >
+            <view class="swiper-item">
+                <view class="xd_list" style="width:100%;text-align:center;">
+                    今日运势（指数最高5分）
+                </view>
+                <view class="xd_list" style="animation:leftac 2s 0s linear;">
+                    <view class="xl-left">
+                        综合指数
+                    </view>
+                    <view class="xl-right">
+                        {{day.summary_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 2.4s 0s linear;">
+                    <view class="xl-left">
+                        爱情指数
+                    </view>
+                    <view class="xl-right">
+                        {{day.love_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 2.8s 0s linear;">
+                    <view class="xl-left">
+                        财富指数
+                    </view>
+                    <view class="xl-right">
+                        {{day.money_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.2s 0s linear;">
+                    <view class="xl-left">
+                        工作指数
+                    </view>
+                    <view class="xl-right">
+                        {{day.work_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.6s 0s linear;">
+                    <view class="xl-left">
+                        贵人星座
+                    </view>
+                    <view class="xl-right">
+                        {{day.grxz||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        吉时
+                    </view>
+                    <view class="xl-right">
+                        {{day.lucky_time||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        吉利颜色
+                    </view>
+                    <view class="xl-right">
+                        {{day.lucky_color||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        幸运数字
+                    </view>
+                    <view class="xl-right">
+                        {{day.lucky_num||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        本日提醒
+                    </view>
+                    <view class="xl-right">
+                        {{day.week_notice||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        运势简介
+                    </view>
+                    <view class="xl-right">
+                        {{day.general_txt||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        爱情运势
+                    </view>
+                    <view class="xl-right">
+                        {{day.love_txt||'暂无'}}
+                    </view>
+                </view>
+            </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="si-flex" style="height:{{hh}}px;width:{{ww}}px;" >
+            <view class="swiper-item">
+                <view class="xd_list" style="width:100%;text-align:center;">
+                    明日运势（指数最高5分）
+                </view>
+                <view class="xd_list" style="animation:leftac 2s 0s linear;">
+                    <view class="xl-left">
+                        综合指数
+                    </view>
+                    <view class="xl-right">
+                        {{tom.summary_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 2.4s 0s linear;">
+                    <view class="xl-left">
+                        爱情指数
+                    </view>
+                    <view class="xl-right">
+                        {{tom.love_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 2.8s 0s linear;">
+                    <view class="xl-left">
+                        财富指数
+                    </view>
+                    <view class="xl-right">
+                        {{tom.money_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.2s 0s linear;">
+                    <view class="xl-left">
+                        工作指数
+                    </view>
+                    <view class="xl-right">
+                        {{tom.work_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.6s 0s linear;">
+                    <view class="xl-left">
+                        贵人星座
+                    </view>
+                    <view class="xl-right">
+                        {{tom.grxz||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        吉时
+                    </view>
+                    <view class="xl-right">
+                        {{tom.lucky_time||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        吉利颜色
+                    </view>
+                    <view class="xl-right">
+                        {{tom.lucky_color||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        幸运数字
+                    </view>
+                    <view class="xl-right">
+                        {{tom.lucky_num||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        明日提醒
+                    </view>
+                    <view class="xl-right">
+                        {{tom.week_notice||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        运势简介
+                    </view>
+                    <view class="xl-right">
+                        {{tom.general_txt||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        爱情运势
+                    </view>
+                    <view class="xl-right">
+                        {{tom.love_txt||'暂无'}}
+                    </view>
+                </view>
+            </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="si-flex" style="height:{{hh}}px;width:{{ww}}px;" >
+            <view class="swiper-item">
+                <view class="xd_list" style="width:100%;text-align:center;">
+                    本周运势（指数最高5分）
+                </view>
+                <view class="xd_list" style="animation:leftac 2s 0s linear;">
+                    <view class="xl-left">
+                        综合指数
+                    </view>
+                    <view class="xl-right">
+                        {{user.summary_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 2.4s 0s linear;">
+                    <view class="xl-left">
+                        爱情指数
+                    </view>
+                    <view class="xl-right">
+                        {{user.love_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 2.8s 0s linear;">
+                    <view class="xl-left">
+                        财富指数
+                    </view>
+                    <view class="xl-right">
+                        {{user.money_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.2s 0s linear;">
+                    <view class="xl-left">
+                        工作指数
+                    </view>
+                    <view class="xl-right">
+                        {{user.work_star||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.6s 0s linear;">
+                    <view class="xl-left">
+                        贵人星座
+                    </view>
+                    <view class="xl-right">
+                        {{user.grxz||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        小人星座
+                    </view>
+                    <view class="xl-right">
+                        {{user.xrxz||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        吉利颜色
+                    </view>
+                    <view class="xl-right">
+                        {{user.lucky_color||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        幸运数字
+                    </view>
+                    <view class="xl-right">
+                        {{user.lucky_num||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        本周提醒
+                    </view>
+                    <view class="xl-right">
+                        {{user.week_notice||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        运势简介
+                    </view>
+                    <view class="xl-right">
+                        {{user.general_txt||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        爱情运势
+                    </view>
+                    <view class="xl-right">
+                        {{user.love_txt||'暂无'}}
+                    </view>
+                </view>
+            </view>
+            </view>
+        </swiper-item>
+        <swiper-item>
+            <view class="si-flex" style="height:{{hh}}px;width:{{ww}}px;" >
+            <view class="swiper-item">
+                <view class="xd_list" style="width:100%;text-align:center;">
+                    本月运势
+                </view>
+                <view class="xd_list" style="animation:leftac 3.6s 0s linear;">
+                    <view class="xl-left">
+                        缘份星座
+                    </view>
+                    <view class="xl-right">
+                        {{mon.yrxz||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.6s 0s linear;">
+                    <view class="xl-left">
+                        贵人星座
+                    </view>
+                    <view class="xl-right">
+                        {{mon.grxz||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        小人星座
+                    </view>
+                    <view class="xl-right">
+                        {{mon.xrxz||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        本月优势
+                    </view>
+                    <view class="xl-right">
+                        {{mon.month_advantage||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        本月弱势
+                    </view>
+                    <view class="xl-right">
+                        {{mon.month_weakness||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        运势简介
+                    </view>
+                    <view class="xl-right">
+                        {{mon.general_txt||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        爱情运势
+                    </view>
+                    <view class="xl-right">
+                        {{mon.love_txt||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        工作学业
+                    </view>
+                    <view class="xl-right">
+                        {{mon.work_txt||'暂无'}}
+                    </view>
+                </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        财富运势
+                    </view>
+                    <view class="xl-right">
+                        {{mon.money_txt||'暂无'}}
+                    </view>
+                </view>
+            </view>
+            </view>
+        </swiper-item>
+    </swiper>
+  </view>
+  <image src="/style/613779.gif" mode="aspectFit" tt:else />
+</view>
+<view class="xz_top">
+    <view class="xt-left" bindtap="backnav">
+       <image src="/style/left.png" mode="aspectFit" class="xl-icon" />
+    </view>
+    <view class="xt-title">{{title}}</view>
+</view>

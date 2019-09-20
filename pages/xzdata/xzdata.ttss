@@ -1,0 +1,86 @@
+/* pages/xzdata/xzdata.ttss */
+page{
+    background-color:#fff;
+}
+.xz_top{
+    position:fixed;
+    z-index:999;
+    top:0;
+    height:80px;
+    width:100%;
+    left:0;
+    right:0;
+}
+.xt-left{
+    position:absolute;left:0;
+    height:80px;
+    
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    z-index:99;
+}
+.xt-title{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:80px;
+    windth:100%;
+}
+.xl-icon{
+    width:40px;
+    height:20px;
+}
+.ac-left{
+    left:0!important;
+}
+
+.xz_bg{
+    transition:left 9s linear;
+}
+.si-flex{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    
+}
+.xz_d{
+    position:absolute;top:0;
+    left:0;
+    z-index:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+.xt-title{
+    color:#fff;
+}
+.xd_list{
+    display:flex;
+    color:#fff;
+    font-weight:bold;
+    font-style:italic;
+    margin:6.5px 0;
+    font-size:14px;
+}
+.xl-left{
+    white-space:nowrap;
+}
+.xl-left::after{
+    content:"：";
+
+}
+.xl-right{
+    flex:1;
+}
+
+@keyframes leftac{
+    0%{
+        opacity:0;
+        transform:translateX(-100px);
+    }
+    100%{
+        opacity:1;
+        transform:translateX(0);
+    }
+}

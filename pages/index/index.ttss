@@ -1,0 +1,66 @@
+page{
+  background-color:#999;
+}
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.sc-b{
+  background-color:#eee;
+  padding:1px 0;
+  box-sizing:border-box;
+}
+.j-item{
+  background-color:#fff;
+  margin:12.5px;
+  border-radius:4px;
+  animation:upd 1s linear;
+  -webkit-animation:upd 1s linear
+}
+
+.ji-bottom{
+  text-align:right;
+  padding:12.5px 0;
+}
+.j-item{
+  padding:12.5px 12.5px 0 12.5px;
+}
+.more{
+  line-height:50px;
+  height:50px;
+  text-align:center;
+  font-size:14px;
+}
+.load{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.l-img{
+  height:20px;
+  width:40px;
+}
+
+@keyframes upd{
+  0%{
+    opacity:0;
+    transform:translateY(-50px);
+  }
+  100%{
+    opacity:1;
+    transfrom:translateY(0);
+  }
+}
+
+
+@-webkit-keyframes upd{
+  0%{
+    opacity:0;
+    transform:translateY(-50px);
+  }
+  100%{
+    opacity:1;
+    transfrom:translateY(0);
+  }
+}

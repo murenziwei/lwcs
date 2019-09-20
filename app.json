@@ -1,0 +1,30 @@
+{
+  "pages":[
+    
+    "pages/index/index",
+    "pages/xingz/xingz",
+    "pages/xzdata/xzdata"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "李伟初始",
+    "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "backgroundColor":"#FFFFFF",
+    "color":"#999999",
+    "selectedColor":"#F5D22F",
+    "list": [{
+      "iconPath":"/style/one_1.png",
+      "selectedIconPath":"/style/one.png",
+      "pagePath": "pages/index/index",
+      "text": "笑话大全"
+    },{
+      "iconPath":"/style/xz_1.png",
+      "selectedIconPath":"/style/xz.png",
+      "pagePath": "pages/xingz/xingz",
+      "text": "星座运势"
+    }]
+  }
+}

@@ -1,0 +1,12 @@
+<view class="xz">
+   <view class="xz-frame">
+       <image src="/style/xz_pics.jpg" class="xf-img" style="height:{{ww}}px;width:{{ww}}px;" />
+
+       <view class="xf-v" style="height:{{ww}}px;width:{{ww}}px;" >
+          <block tt:for="{{list}}">
+            <navigator url="/pages/xzdata/xzdata?name={{item.name}}&consName={{item.cn}}&img={{item.url}}" class="x-v-item" style="width:{{ww*0.224}}px;height:{{ww*0.3067}}px;"></navigator>
+          
+          </block>
+       </view>
+   </view>
+</view>

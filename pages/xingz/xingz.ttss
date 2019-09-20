@@ -1,0 +1,23 @@
+/* pages/xingz/xingz.ttss */
+page{
+    background-color:#fff;
+}
+.xz-frame{
+    position:relative;
+
+}
+
+.xf-v{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    z-index:2;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    align-content:space-between;
+}
+.x-v-item{
+    display:block;
+}
