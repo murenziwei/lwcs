@@ -1,0 +1,35 @@
+<lw-bg changeS="{{changes}}" />
+<lw-top lwTitle="美图详情" bgColor="rgba(0,0,0,0)" isShow="{{true}}" />
+<scroll-view class="sc-b" scroll-y style="height:{{hh}}px;" bindscrolltolower="addfn">
+    <view class="jode">
+        <view class="j-item" tt:for="{{list}}">
+            <view class="ji-title" hidden="{{!item.title}}">
+                <rich-text nodes="{{item.title}}"></rich-text>
+            </view>
+            <view class="ji-header">
+                <view tt:for="{{item.list}}" tt:for-item="val">
+                    <image data-src="https://images.weserv.nl/?url={{val.middle}}" src="https://images.weserv.nl/?url={{val.middle}}" mode="aspectFit" style="width:100%;" lazy-load="{{true}}" bindtap="privfn" />
+                </view>
+            </view>
+            <view class="ji-bottom">
+                创建时间:{{item.ct||'暂无时间'}}
+            </view>
+        </view>
+        <!-- <view class="j-item">
+            <ad unit-id="14glac803bnkf3f96f"></ad>
+        </view> -->
+        <view class="more">
+           <view class="load" hidden="{{!load}}">
+              <image src="/style/load.gif" mode="aspectFit" class="l-img" /> 加载中
+           </view>
+           <view class="m_text" hidden="{{load}}">
+               <view class="mt_t" hidden="{{more_d}}">
+                  熊队！亏你能滚到底！
+               </view>
+               <view class="mt_t" hidden="{{!more_d}}" bindtap="addfn">
+                  查看更多
+               </view>
+           </view>
+        </view>
+    </view>
+</scroll-view>

@@ -80,7 +80,7 @@
                         本日提醒
                     </view>
                     <view class="xl-right">
-                        {{day.week_notice||'暂无'}}
+                        {{day.day_notice||'暂无'}}
                     </view>
                 </view>
                 <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
@@ -140,6 +140,14 @@
                         {{tom.work_star||'暂无'}}
                     </view>
                 </view>
+                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
+                    <view class="xl-left">
+                        明日提醒
+                    </view>
+                    <view class="xl-right">
+                        {{tom.day_notice||'暂无'}}
+                    </view>
+                </view>
                 <view class="xd_list" style="animation:leftac 3.6s 0s linear;">
                     <view class="xl-left">
                         贵人星座
@@ -170,14 +178,6 @@
                     </view>
                     <view class="xl-right">
                         {{tom.lucky_num||'暂无'}}
-                    </view>
-                </view>
-                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
-                    <view class="xl-left">
-                        明日提醒
-                    </view>
-                    <view class="xl-right">
-                        {{tom.week_notice||'暂无'}}
                     </view>
                 </view>
                 <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
@@ -304,14 +304,6 @@
                 </view>
                 <view class="xd_list" style="animation:leftac 3.6s 0s linear;">
                     <view class="xl-left">
-                        缘份星座
-                    </view>
-                    <view class="xl-right">
-                        {{mon.yrxz||'暂无'}}
-                    </view>
-                </view>
-                <view class="xd_list" style="animation:leftac 3.6s 0s linear;">
-                    <view class="xl-left">
                         贵人星座
                     </view>
                     <view class="xl-right">
@@ -324,22 +316,6 @@
                     </view>
                     <view class="xl-right">
                         {{mon.xrxz||'暂无'}}
-                    </view>
-                </view>
-                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
-                    <view class="xl-left">
-                        本月优势
-                    </view>
-                    <view class="xl-right">
-                        {{mon.month_advantage||'暂无'}}
-                    </view>
-                </view>
-                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
-                    <view class="xl-left">
-                        本月弱势
-                    </view>
-                    <view class="xl-right">
-                        {{mon.month_weakness||'暂无'}}
                     </view>
                 </view>
                 <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
@@ -366,20 +342,16 @@
                         {{mon.work_txt||'暂无'}}
                     </view>
                 </view>
-                <view class="xd_list" style="animation:leftac 3.7s 0s linear;">
-                    <view class="xl-left">
-                        财富运势
-                    </view>
-                    <view class="xl-right">
-                        {{mon.money_txt||'暂无'}}
-                    </view>
-                </view>
             </view>
             </view>
         </swiper-item>
     </swiper>
   </view>
-  <image src="/style/613779.gif" mode="aspectFit" tt:else />
+  <view class="xz_d" style="height:{{hh}}px;width:{{ww}}px;background-color:#fff;" tt:else >
+
+   <image src="/style/613779.gif" mode="aspectFit"/>
+  </view>
+
 </view>
 <view class="xz_top">
     <view class="xt-left" bindtap="backnav">

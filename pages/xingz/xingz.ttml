@@ -1,6 +1,8 @@
+<lw-bg changeS="{{changes}}" />
+<lw-top lwTitle="星座运势" bgColor="rgba(0,0,0,0)" isShow="{{true}}" />
 <view class="xz">
    <view class="xz-frame">
-       <image src="/style/xz_pics.jpg" class="xf-img" style="height:{{ww}}px;width:{{ww}}px;" />
+       <image src="/style/xz_pics.png" class="xf-img" style="height:{{ww}}px;width:{{ww}}px;" />
 
        <view class="xf-v" style="height:{{ww}}px;width:{{ww}}px;" >
           <block tt:for="{{list}}">

@@ -1,4 +1,10 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "笑话大全"
+  
+  "usingComponents": {
+    "lw-bg": "/components/ranbg/ranbg",
+    "lw-top":"/components/topnav/topnav"
+  },
+  
+  "navigationBarTitleText": "笑话大全",
+  "navigationStyle":"custom"
 }

@@ -1,0 +1,17 @@
+<view style="height:{{(nh+th)}}px">
+            
+    <view style="width:100%;box-sizing:border-box;z-index:999;position:fixed;padding-top:{{nh}}px;background-color:{{bgColor}}">
+        <view style="height:{{th}}px;">
+            <view wx:if="{{isShow}}" class="nt-left">
+                <view class="nl-frame" style="height:{{th}}px;">
+                    <view class="nl-icon iconfont iconleft"  bindtap="navback" tt:if="{{canback}}">
+                      <image src="../../style/left1.png" mode='aspectFit' class="left-icon"></image>
+                    </view>
+                </view>
+            </view>
+            <view class="nt-right" style="line-height:{{th}}px">
+                <text class="nr-text" style="color:{{lwColor?lwColor:'#000'}};font-weight:{{lwFont}}">{{lwTitle}}</text>
+            </view>    
+        </view>    
+    </view>
+</view>

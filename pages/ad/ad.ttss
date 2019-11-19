@@ -1,0 +1,4 @@
+/* pages/ad/ad.ttss */
+.ad-item{
+    margin-bottom:20px;
+}

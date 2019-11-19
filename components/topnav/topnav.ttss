@@ -1,0 +1,42 @@
+/* components/topnav/topnav.wxss */
+.left-icon{
+  width:50rpx;
+  height:50rpx;
+}
+.left-icon:active{
+  opacity:.7;
+}
+.nt-left{
+    position:absolute;
+    left:5px;
+}
+.nl-frame{
+    display:flex;
+    align-items:center;
+
+}
+.nl-icon{
+    font-size:19px;
+    margin:0 10px;
+}
+.nl-icon:actibe{
+    opacity:0.7;
+}
+
+
+.nt-right{
+    text-align:center;
+}
+.nr-text{
+    font-size:16px;
+}
+/* 回到术者 */
+.iconimg{
+  width: 50rpx;
+  height: 50rpx;
+}
+.iconimg image{
+   width: 45rpx;
+  height: 45rpx;
+  padding-top: 2rpx;
+}

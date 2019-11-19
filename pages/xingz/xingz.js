@@ -78,5 +78,12 @@ Page({
         })
       }
     });
+  },
+  
+  onShow(){
+    
+     this.setData({
+       changes:Math.random()
+     })
   }
 })

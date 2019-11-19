@@ -1,9 +1,9 @@
-{
+{  
   "usingComponents": {
     "lw-bg": "/components/ranbg/ranbg",
     "lw-top":"/components/topnav/topnav"
   },
   
-  "navigationBarTitleText": "星座运势",
-  "navigationStyle":"custom"
+  "navigationBarTitleText": "美图大全",
+  "navigationStyle": "custom"
 }

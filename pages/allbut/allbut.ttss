@@ -1,0 +1,24 @@
+/* pages/allbut/allbut.ttss */
+.l-title{
+    padding:12.5px;
+    border-left:8px solid #F5D22F;
+    background-color:rgba(0,0,0,.2);
+    color:#fff;
+    font-weight: bold;
+}
+.l-con{
+    padding:12.5px;
+    display:flex;
+    justify-content: space-between;
+    flex-wrap:wrap;
+}
+.lc-item{
+    margin:10px;
+    padding:10px;
+    background-color:rgba(255,255,255,.5);
+    color:#212121;
+    box-shadow:0 0 10px rgba(0,0,0,.3);
+}
+.lc-item:active{
+    opacity:.7;
+}

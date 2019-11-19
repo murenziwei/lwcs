@@ -1,0 +1,87 @@
+<!-- 随机背景 -->
+<view class="f-bg" style="background-image:url({{bgu}})">
+</view>
+<!-- 右部菜单 -->
+<view class="fb-right">
+   <view class="fr-in">
+     <view class="fi-item">
+       <view class="fi-menu {{listS?'topact':'toplea'}}">
+         <view class="fm-list" tt:for="{{menu}}">
+            <view class="f-l-left {{item.ishid?'rightact':'rightlea'}}" catchtap="copyTBL" data-str="{{item.val}}">{{item.text}}</view>
+            <view class="f-l-text">
+              <image src="{{item.icon}}" class="flt-img" mode="aspectFit" data-ind="{{index}}" catchtap="menuOp"></image>
+            </view>
+         </view>
+         
+        <view class="fi-item">
+          <view class="fi-text" catchtap="bgsave" data-bg="{{bgu}}">
+            背景
+          </view>
+        </view>
+        <view class="fi-item">
+          <view class="fi-text" catchtap="ropfn" data-val="{{true}}">
+            打赏
+          </view>
+        </view>
+        <view class="fi-item">
+          <view class="fi-text" catchtap="openStr">
+            提示
+          </view>
+        </view>
+       </view>
+       <view class="fi-text" catchtap="listOp">
+         {{listS?'取消':'列表'}}
+       </view>
+     </view>
+   </view>
+</view>
+<!-- 通知栏文本信息 -->
+<view class="pop {{strSt?'act':''}}">
+   <view class="p-in">
+      <view class="pi-content" catchtap="ropfn" data-val="{{true}}">
+         <rich-text nodes="{{str}}"></rich-text>
+      </view>
+      <view class="pi-cancel">
+           <image src="/style/cancel.png" class="pco-icon" catchtap="openStr"></image>
+      </view>
+   </view>
+</view>
+<!-- 打赏弹框 -->
+<view class="reward {{rSta?'r-show':''}}" bindtap="ropfn" data-val="{{false}}">
+   <view class="r-out" catchtap="zhefn" data-val="{{true}}">
+     <view class="ro-top">
+        <view class="r-in">
+           <view class="ri-text">
+              赏
+           </view>
+           <view class="ri-bottom"></view>
+        </view>
+     </view>
+     <view class="ro-bottom">
+         <view class="rb-item">
+            <view class="ri-top">
+              <image class="rt-img" src="https://murenziwei.github.io/images/lwcs/4cbbeffd2371071433dca8a9d458619.png" mode="aspectFit" catchtap="codesave" data-bg="https://murenziwei.github.io/images/lwcs/4cbbeffd2371071433dca8a9d458619.png"></image>
+            </view>
+            <view class="rt-text">
+               微信
+            </view>
+         </view>
+         <view class="rb-item">
+            <view class="ri-top">
+              <image class="rt-img" src="https://murenziwei.github.io/images/lwcs/a3089684a0a37c1876c7bf6161540cf.png" mode="aspectFit" catchtap="codesave" data-bg="https://murenziwei.github.io/images/lwcs/a3089684a0a37c1876c7bf6161540cf.png"></image>
+            </view>
+            <view class="rt-text">
+               支付宝
+            </view>
+         </view>
+     </view>
+     <view class="ro-fot">
+            <text>你的每一分打赏，是俺做下去的一份动力，非常感谢有你的存在~~
+            如果你需要俺帮忙的话~~加QQ2309485575~~加微信murenziweiyirichen</text>
+            
+     </view>
+     <view class="rf-cancel">
+         <image class="rc-icon" src="/style/cancel.png" catchtap="ropfn" data-val="{{false}}"></image>
+     </view>
+   </view>
+</view>

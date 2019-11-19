@@ -7,5 +7,23 @@
 		"newFeature": true
 	},
 	"appid": "tt03be75039c94e1c7",
-	"projectname": "zjsm"
+	"projectname": "zjsm",
+	"condition": {
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "星座运势",
+					"pathName": "pages/xingz/xingz",
+					"query": "",
+					"scene": "011001",
+					"referrerInfo": {
+						"appId": "",
+						"extraData": ""
+					}
+				}
+			]
+		}
+	}
 }

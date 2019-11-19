@@ -1,13 +1,34 @@
-<scroll-view class="sc-b" scroll-y style="height:{{hh}}px;" bindscrolltolower="addfn">
-    <view class="jode">
-        <view class="j-item" tt:for="{{list}}">
-            <view class="ji-header">
-                <text class="jh-text">{{item.content||'暂无内容'}}</text>
-            </view>
-            <view class="ji-bottom">
-                创建时间:{{item.updatetime||'暂无时间'}}
-            </view>
+<lw-bg changeS="{{changes}}" />
+
+<lw-top lwTitle="笑话大全" bgColor="rgba(0,0,0,0)" isShow="{{true}}" />
+<view class="header">
+    <view class="h-flex">
+        <view tt:for="{{tabArr}}" class="hf-tab {{tab==index?'act':''}}" bindtap="tabsfn" data-ind="{{index}}">
+            {{item}}
         </view>
+    </view>
+</view>
+<scroll-view class="sc-b" scroll-y style="height:{{hh-50}}px;" bindscrolltolower="addfn">
+    <view class="jode">
+        <block tt:for="{{list[tab]}}">
+
+            <view class="j-item">
+                <view class="ji-title" hidden="{{!item.title}}">
+                    <rich-text nodes="{{item.title}}"></rich-text>
+                </view>
+                <view class="ji-header">
+                    <rich-text class="jh-text" hidden="{{!(tab==0)}}" nodes="{{item.text||'暂无内容'}}" bindtap="copyTBL" data-str="{{item.text}}"></rich-text>
+                    <image class="jh-img" bindtap="privfn" data-src="{{item.img}}"  src="https://images.weserv.nl/?url={{item.img}}" hidden="{{!(tab==1)}}" mode="aspectFit" lazy-load="{{true}}" />
+                </view>
+                <view class="ji-bottom">
+                    创建时间:{{item.ct||'暂无时间'}}
+                </view>
+            </view>
+        </block>
+        
+        <!-- <view class="j-item" >
+            <ad unit-id="7q8l5q4f0qh8splse6" bindload="loadfn"></ad>
+        </view> -->
         <view class="more">
            <view class="load" hidden="{{!load}}">
               <image src="/style/load.gif" mode="aspectFit" class="l-img" /> 加载中

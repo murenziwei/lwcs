@@ -1,19 +1,96 @@
 const apiU=require('base');
 const http=require('http');
 console.log(http,"http");
-
+function formatterDateTime() {
+  var date=new Date()
+  var month=date.getMonth() + 1
+    var datetime = date.getFullYear()
+            + ""// "年"
+            + (month >= 10 ? month : "0"+ month)
+            + ""// "月"
+            + (date.getDate() < 10 ? "0" + date.getDate() : date
+                    .getDate())
+            + ""
+            + (date.getHours() < 10 ? "0" + date.getHours() : date
+                    .getHours())
+            + ""
+            + (date.getMinutes() < 10 ? "0" + date.getMinutes() : date
+                    .getMinutes())
+            + ""
+            + (date.getSeconds() < 10 ? "0" + date.getSeconds() : date
+                    .getSeconds());
+    return datetime;
+}
 const lw={
+    ran_img: () => {
+        return http._get(apiU.xjh + "/random_img.php", {return:"json"});
+    },
+    two1: (data) => {
+        //随机生成文本笑话
+        if (typeof (data) === "object") {
+        var obj = {
+            ...data,
+            showapi_sign: "f923a02c5627424fb5d23b9bdabb7c3b",
+            showapi_appid: "105242",
+            len: 20
+        }
+        return http._get(apiU.xz + "/341-5", obj);
+        }
+    },
+    two1_s: (data) => {
+        //随机生成图片笑话
+        if (typeof (data) === "object") {
+        var obj = {
+            ...data,
+            showapi_sign: "f923a02c5627424fb5d23b9bdabb7c3b",
+            showapi_appid: "105242",
+            len: 20
+        }
+        return http._get(apiU.xz + "/341-4", obj);
+        }
+    },
     one:(data)=>{
         if(typeof(data)==="object"){
-            var time=Math.floor(new Date().getTime()/1000);
             var obj={
                 ...data,
-                key:"e0b8a2b3ab42c3360111bfe74dd48d1a",
-                time,
-                sort:"desc",
-                pagesize:20
+                showapi_sign:"f923a02c5627424fb5d23b9bdabb7c3b",
+                showapi_appid:"105242",
+                maxResult:20
             }
-            return http._get(apiU.joke+"/joke/content/list.php",obj);
+            return http._get(apiU.xz+"/341-1",obj);
+        }
+    },
+    one_s:(data)=>{
+        if(typeof(data)==="object"){
+            var obj={
+                ...data,
+                showapi_sign:"f923a02c5627424fb5d23b9bdabb7c3b",
+                showapi_appid:"105242",
+                maxResult:20
+            }
+            return http._get(apiU.xz+"/341-2",obj);
+        }
+    },
+    mei_page:(data)=>{
+        if(typeof(data)==="object"){
+            var obj={
+                ...data,
+                showapi_sign:"f923a02c5627424fb5d23b9bdabb7c3b",
+                showapi_appid:"105242",
+                maxResult:2
+            }
+            return http._get(apiU.xz+"/852-2",obj);
+        }
+    },
+    mei_list:(data)=>{
+        //列出美图类型id
+        if(typeof(data)==="object"){
+            var obj={
+                ...data,
+                showapi_sign:"f923a02c5627424fb5d23b9bdabb7c3b",
+                showapi_appid:"105242"
+            }
+            return http._get(apiU.xz+"/852-1",obj);
         }
     },
     two:(data)=>{

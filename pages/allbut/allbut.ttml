@@ -1,0 +1,14 @@
+<lw-bg changeS="{{changes}}" />
+
+<lw-top lwTitle="美图大全" bgColor="rgba(0,0,0,0)" isShow="{{true}}" />
+<view>
+   <view tt:for="{{con}}" tt:for-item="one" class="list">
+       <view class="l-title">{{one.name}}</view>
+       <view class="l-con">
+           <navigator tt:for="{{one.list}}" tt:for-item="two" data-id="{{two.id}}" class="lc-item" url="/pages/abdetail/abdetail?id={{two.id}}">
+               {{two.name}}
+           </navigator>
+       </view>
+   </view>
+</view>
+<!-- <ad unit-id="7q8l5q4f0qh8splse6" ></ad> -->

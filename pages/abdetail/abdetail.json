@@ -3,7 +3,6 @@
     "lw-bg": "/components/ranbg/ranbg",
     "lw-top":"/components/topnav/topnav"
   },
-  
-  "navigationBarTitleText": "星座运势",
+  "navigationBarTitleText": "美图详情",
   "navigationStyle":"custom"
 }

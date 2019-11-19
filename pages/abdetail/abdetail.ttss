@@ -68,35 +68,3 @@ page{
     transfrom:translateY(0);
   }
 }
-
-
-.header{
-  display:flex;
-  align-items:center;
-  justify-content: center;
-  height:50px;
-  /* background-color:#eee; */
-}
-.h-flex{
-  height:30px;
-  background-color:#fff;
-  display:flex;
-  align-items:center;
-  position:relative;
-  border-radius:30px;
-  overflow:hidden;
-}
-.hf-tab{
-  height:30px;
-  line-height:30px;
-  width:60px;
-  text-align:center;
-  transition:all .3s;
-}
-.hf-tab.act{
-  color:#fff;
-  background-color:#F5D22F;
-}
-.jh-img{
-  width:100%;
-}

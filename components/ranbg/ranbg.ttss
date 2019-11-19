@@ -1,0 +1,284 @@
+/* components/ranbg/ranbg.wxss */
+.f-bg{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  background-attachment: fixed;
+  z-index:-1;
+  transition:background .3s;
+}
+
+.fb-right{
+  position:fixed;
+  right:12.5px;
+  bottom:40px;
+  z-index:999;
+  
+}
+.fi-item{
+  position:relative;
+  margin:10px 0;
+}
+.fi-text:active{
+  opacity:.7;
+}
+.fi-text{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background-color:rgba(0,0,0,.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color:#fff;
+}
+.flt-img{
+  width:32px;
+  height:32px;
+}
+.f-l-text{
+  width:50px;
+  height:50px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+.fm-list{
+  position:relative;
+}
+.f-l-left{
+  font-size:15px;
+  position:absolute;
+  right:50px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  top:5px;
+  height:40px;
+  padding:0 12.5px;
+  color:#fff;
+  white-space:nowrap;
+  background-color:rgba(0,0,0,.7);
+  border-top-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+  transition:all .3s;
+}
+.fi-menu{
+  position:absolute;
+  bottom:50px;
+  transition:all .3s;
+}
+
+@keyframes topact{
+  0%{
+    opacity:0;
+    bottom:0;
+  }
+  100%{
+    opacity:1;
+    bottom:50px;
+    display:block;
+  }
+}
+
+
+@keyframes toplea{
+  0%{
+    opacity:1;
+    bottom:50px;
+  }
+  50%{
+    opacity:.7;
+    bottom:20px;
+  }
+  100%{
+    opacity:0;
+    bottom:0;
+  }
+}
+
+@keyframes rightact{
+  0%{
+    opacity:0;
+    right:0;
+  }
+  100%{
+    opacity:1;
+    right:50px;
+  }
+}
+
+
+@keyframes rightlea{
+  0%{
+    opacity:1;
+    right:50px;
+  }
+  50%{
+    opacity:.7;
+    right:20px;
+  }
+  100%{
+    opacity:0;
+    right:0;
+  }
+}
+
+.topact{
+  display:block;
+  animation:topact .3s;
+}
+.toplea{
+  
+  opacity:0;
+  bottom:0;
+  z-index:-1;
+  display:none;
+}
+.rightact{
+  animation:rightact .3s;
+}
+.rightlea{
+  
+  opacity:0;
+  right:-500px;
+  z-index:-1;
+}
+
+
+/* 通知栏 */
+.pop{
+  position:fixed;
+  bottom:20px;
+  z-index:-1;
+  left:20px;
+  right:20px;
+  transition:all .3s;
+  opacity:0;
+  transform:translateY(30px);
+}
+.pop.act{
+  transform:translateY(0px);
+  opacity:1;
+  z-index:999;
+}
+
+.p-in{
+  background-color:rgba(0,0,0,.7);
+  border-radius:10px;
+  padding:12.5px;
+  position:relative;
+}
+.pi-content{
+  color:#fff;
+}
+.pi-cancel{
+  position:absolute;
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  right:-15px;
+  top:-15px;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  box-shadow: 0 0 1px rgba(0,0,0,.7);
+}
+.pco-icon{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  background-color:#fff;
+}
+
+
+.reward{
+  position:fixed;
+  top:0;left:0;right:0;bottom:0;
+  background-color:rgba(0,0,0,.7);
+  z-index:-1;
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  transition:all .3s;
+  transform:translateY(-100px);
+  opacity:0;
+}
+.reward.r-show{
+  z-index:9999;
+  opacity:1;
+  transform: translateY(0);
+}
+.r-out{
+  width:80%;
+  border-radius:8px;
+  overflow:hidden;
+}
+.rt-img{
+  width:270rpx;
+  height:270rpx;
+}
+.ro-top{
+  height:60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-color:rgba(255,255,255,.7);
+  
+}
+.r-in{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ri-text{
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  background-color:#51565A;
+  
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color:#fff;
+}
+.ri-bottom{
+  border:10px solid #fff;
+  border-top:0;
+  border-left-color:transparent;
+  border-right-color:transparent;
+}
+.ro-bottom{
+  background-color:#fff;
+}
+.ro-bottom{
+  display:flex;
+  justify-content: space-around;
+  padding:12.5px 0;
+}
+.rb-item{
+  text-align:center;
+}
+.ro-fot{
+  background-color:#fff;
+  padding:12.5px;
+  text-align: center;
+}
+
+.rc-icon{
+  background-color:#fff;
+  width:35px;
+  height:35px;
+  border-radius:50%;
+
+}
+.rc-icon:active{
+  opacity: .7;
+}
+.rf-cancel{
+  padding:12.5px;
+  text-align: center;
+}
