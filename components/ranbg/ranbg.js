@@ -26,16 +26,19 @@ Component({
    * 组件的初始数据
    */
   data: {
+    show:false,
     strtime:'',
     count:0,
     str:`
     李伟初始在QQ、微信、支付宝、头条小程序已经上线，俺再也不用担心你找不到我了
     `,
-    strArr: ["李伟初始在QQ、微信、支付宝、头条小程序已经上线，俺再也不用担心你找不到我了","俺开发小程序不容易,赏个一毛钱，让俺晓得你的存在~~，猛点俺~~","大哥大姐们，告诉你哦~~在QQ小程序、微信小程序、支付宝小程序、头条小程序都能搜到这个小程序呀","咳咳，如果有美女看上了俺的话，俺单身，有联系方式QQ：2309485575，微信：murenziweiyirichen","当然，俺有什么可以帮得上你的话，也可以点击列表联系俺，么么哒"],
+    strArr: ["你来了，你来啦，收藏这小程序再走吧"],
     strSt:true,
     listS:false,
     rSta:false,
 
+    bgtest:["//murenziwei.github.io/images/lwcs/tz/p0.jpg","//murenziwei.github.io/images/lwcs/tz/p1.jpg","//murenziwei.github.io/images/lwcs/tz/p2.jpg","//murenziwei.github.io/images/lwcs/tz/p3.jpg","//murenziwei.github.io/images/lwcs/tz/p4.jpg"],
+    
     menu:[
       {
         icon:"/style/qq-o.png",
@@ -50,26 +53,30 @@ Component({
       },
     ],
     bgua: [],
-    bgu:'//img.xjh.me/desktop/img/45307498_p0.jpg'
+    bgu:'//murenziwei.github.io/images/lwcs/tz/p0.jpg'
   },
   attached(){
-    tt.request({
-      url: 'https://murenziwei.github.io/images/lwcs/tong.text', // 目标服务器url
-      success: (res) => {
-        if(res.statusCode==200){
-          var arr=res.data,str='';
-          for(var i of arr){
-            str+=String.fromCharCode(i);
+    
+      var nowda=new Date().getTime(),onda=new Date("2019/11/21").getTime();
+      if(nowda>onda){
+        tt.request({
+          url: 'https://murenziwei.github.io/images/lwcs/tong.text', // 目标服务器url
+          success: (res) => {
+            if(res.statusCode==200){
+              var arr=res.data,str='';
+              for(var i of arr){
+                str+=String.fromCharCode(i);
+              }
+              if(str){
+                var strArr=JSON.parse(str);
+                this.setData({
+                  strArr
+                })
+              }
+            }
           }
-          if(str){
-            var strArr=JSON.parse(str);
-            this.setData({
-              strArr
-            })
-          }
-        }
+        });
       }
-    });
   },
   /**
    * 组件的方法列表
@@ -78,41 +85,89 @@ Component({
     go_update(){
 
       // 页面被展示
-
-      let bgua = this.data.bgua, len = bgua.length;
-      if (len >= 3) {
-        var count = Math.floor(Math.random() * len);
+      var nowda = new Date().getTime(), onda = new Date("2019/11/22").getTime();
+      if (nowda > onda) {
         this.setData({
-          bgu: bgua[count]
+          show: true
         })
-      } else {
-        lw.ran_img().then((res) => {
-          if (res.img) {
-            bgua.push(res.img);
-            this.setData({
-              bgu: res.img
-            })
-          } else {
-            this.setData({
-              bgua: ["//img.xjh.me/desktop/img/63244308_p1_master1200.jpg", "//img.xjh.me/desktop/img/62036198_p0.jpg", "//img.xjh.me/desktop/img/63485497_p0.jpg", "//img.xjh.me/desktop/img/58284683_p0.jpg", "//img.xjh.me/desktop/img/57080756_p0.jpg", "//img.xjh.me/desktop/img/60583531_p0_master1200.jpg", "//img.xjh.me/desktop/img/60583531_p0_master1200.jpg", "//img.xjh.me//desktop//img//62062343_p0.jpg", "//img.xjh.me/desktop/img/59590045_p0.jpg", "//img.xjh.me/desktop/img/53040153_p0.jpg", "//img.xjh.me/desktop/img/59590045_p0.jpg"]
-
-            })
-          }
-        })
+        
       }
-      
+      let bgua = this.data.bgua,len=bgua.length;
+      if(len>=3){
+        var count=Math.floor(Math.random()*len);
+        this.setData({
+          bgu:bgua[count]
+        })
+      }else{
+        if(nowda > onda){
+          lw.ran_img().then((res) => {
+            console.log(res, "不敢当no");
+            if (res.img) {
+              bgua.push(res.img);
+              this.setData({
+                bgu: res.img
+              })
+            }else{
+              var na=this.data.bgtest;
+              
+              var num=Math.floor(Math.random()*na.length);
+              this.setData({
+                bgua:na,
+                bgu:na[num]
+              })
+            }
+          })
+        }else{
+          
+              var na=this.data.bgtest;
+              
+              var num=Math.floor(Math.random()*na.length);
+              this.setData({
+                bgua:na,
+                bgu:na[num]
+              })
+        }
+      }
       clearInterval(this.data.strtime);
-      this.data.strtime = setInterval(() => {
-        if (this.data.strSt) {
+      this.data.strtime=setInterval(()=>{
+        if(this.data.strSt){
 
           var len = this.data.strArr.length;
           this.setData({
             str: this.data.strArr[Math.floor(Math.random() * len)]
           });
         }
-      }, 3000)
+      },3000)
 
-      console.log("我出现");
+
+        if(nowda > onda){
+          lw.ran_img().then((res) => {
+            console.log(res, "不敢当no");
+            if (res.img) {
+              bgua.push(res.img);
+              this.setData({
+                bgu: res.img
+              })
+            }else{
+              var na=this.data.bgtest;
+              
+              var num=Math.floor(Math.random()*na.length);
+              this.setData({
+                bgua:na,
+                bgu:na[num]
+              })
+            }
+          })
+        }else{
+          
+              var na=this.data.bgtest;
+              
+              var num=Math.floor(Math.random()*na.length);
+              this.setData({
+                bgua:na,
+                bgu:na[num]
+              })
+        }
     },
     openStr(){
       this.setData({

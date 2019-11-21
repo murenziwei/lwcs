@@ -6,7 +6,7 @@
    <view class="fr-in">
      <view class="fi-item">
        <view class="fi-menu {{listS?'topact':'toplea'}}">
-         <view class="fm-list" tt:for="{{menu}}">
+         <view class="fm-list" tt:if="{{show}}" tt:for="{{menu}}">
             <view class="f-l-left {{item.ishid?'rightact':'rightlea'}}" catchtap="copyTBL" data-str="{{item.val}}">{{item.text}}</view>
             <view class="f-l-text">
               <image src="{{item.icon}}" class="flt-img" mode="aspectFit" data-ind="{{index}}" catchtap="menuOp"></image>
@@ -18,7 +18,7 @@
             背景
           </view>
         </view>
-        <view class="fi-item">
+        <view class="fi-item" tt:if="{{show}}">
           <view class="fi-text" catchtap="ropfn" data-val="{{true}}">
             打赏
           </view>
@@ -47,7 +47,7 @@
    </view>
 </view>
 <!-- 打赏弹框 -->
-<view class="reward {{rSta?'r-show':''}}" bindtap="ropfn" data-val="{{false}}">
+<view tt:if="{{show}}" class="reward {{rSta?'r-show':''}}" bindtap="ropfn" data-val="{{false}}">
    <view class="r-out" catchtap="zhefn" data-val="{{true}}">
      <view class="ro-top">
         <view class="r-in">
