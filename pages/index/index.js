@@ -15,10 +15,11 @@ Page({
         [
       ],
       [
-      ]
+      ],
+      []
     ],
     pArr:[1,1],
-    jkArr: ['two1', 'two1_s']
+    jkArr: ['two1', 'two1_s','two1_gif']
   },
   onLoad: function () {
     that=this;
@@ -61,7 +62,7 @@ Page({
     get_data(){
       var nowda=new Date().getTime(),onda=new Date("2019/11/21").getTime();
       if(nowda>onda){
-        let tabA=["文本","图片"];
+        let tabA=["文本","图片","动态"];
         that.setData({
           tabArr:tabA
         })
@@ -109,7 +110,13 @@ Page({
             load:false
           })
           if(res.showapi_res_code===0){
-            var result=res.showapi_res_body.list;
+            if (tab == 2) {
+
+              var result = res.showapi_res_body.contentlist;
+            } else {
+
+              var result = res.showapi_res_body.list;
+            }
             if(result.length===0){
               that.setData({
                 more_d:false

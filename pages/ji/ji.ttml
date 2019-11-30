@@ -1,0 +1,60 @@
+<lw-bg />
+<!-- <lw-top lwTitle="经典鸡汤" bgColor="rgba(0,0,0,0)" isShow="{{true}}" /> -->
+<view style="height:{{(nh+th)}}px">
+            
+    <view style="background-color:rgba(255,255,255,.5);width:100%;box-sizing:border-box;z-index:999;position:fixed;padding-top:{{nh}}px;">
+        <view style="height:{{th}}px;">
+            <view class="nt-left">
+                <view class="nl-frame" style="height:{{th}}px;display:flex;align-items:center;">
+                   <view class="nf-in" style="background-color:{{inputs?'rgba(255,255,255,.8)':'rgba(255,255,255,.5)'}}">
+                     <view class="n-i-left" style="width:{{ww*(inputs?0.5:0.3)}}px;">
+                        <input class="nil-input" placeholder="想谁了~" placeholder-style="font-size:12px;" bindinput="inputfn" bindfocus="focusfn" bindblur="blurfn" bindconfirm="searchfn"></input>
+                     </view>
+                     <icon type="search" size="20" color="#F5D22F" bindtap="searchfn" class="opa2"></icon>
+                   </view>
+                </view>
+            </view>  
+        </view>    
+    </view>
+</view>
+<scroll-view class="sc-b" scroll-y style="height:{{hh}}px;" bindscrolltolower="addfn">
+    <view class="jode">
+        <view class="ji-out" tt:for="{{list}}" tt:key="{{index}}">
+          <view class="jo-top">
+            <view class="jt-one"></view>
+            <view class="jt-two">
+                <view class="j-t-o"></view>
+            </view>
+          </view>
+          
+          <view class="j-item">
+
+            <view class="ji-header">
+                <view tt:for="{{item.mottoList}}" tt:for-item="val" tt:for-index="vind" tt:key="{{index}}-{{vind}}">
+                    <view class="text-row" bindtap="copyTBL" data-str="{{val}}">
+                        <rich-text nodes="{{val}}"></rich-text>
+                    </view>
+                </view>
+            </view>
+            <view class="ji-bottom">
+                —{{item.name||''}}
+            </view>
+            <view class="ji-r-b"></view>
+          </view>  
+        </view>
+          
+        <view class="more">
+           <view class="load" hidden="{{!load}}">
+              <image src="/style/load.gif" mode="aspectFit" class="l-img" /> 加载中
+           </view>
+           <view class="m_text" hidden="{{load}}">
+               <view class="mt_t" hidden="{{more_d}}">
+                  熊队！亏你能滚到底！
+               </view>
+               <view class="mt_t" hidden="{{!more_d}}" bindtap="addfn">
+                  查看更多
+               </view>
+           </view>
+        </view>
+    </view>
+</scroll-view>

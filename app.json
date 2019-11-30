@@ -5,7 +5,8 @@
     "pages/xingz/xingz",
     "pages/xzdata/xzdata",
     "pages/allbut/allbut",
-    "pages/abdetail/abdetail"
+    "pages/abdetail/abdetail",
+    "pages/ji/ji"
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -33,6 +34,11 @@
       "selectedIconPath":"/style/xz.png",
       "pagePath": "pages/xingz/xingz",
       "text": "星座运势"
+    },{
+      "iconPath":"/style/ji_1.png",
+      "selectedIconPath":"/style/ji.png",
+      "pagePath": "pages/ji/ji",
+      "text": "经典语录"
     }]
   },
   

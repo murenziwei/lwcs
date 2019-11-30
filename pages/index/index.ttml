@@ -19,6 +19,14 @@
                 <view class="ji-header">
                     <rich-text class="jh-text" hidden="{{!(tab==0)}}" nodes="{{item.text||'暂无内容'}}" bindtap="copyTBL" data-str="{{item.text}}"></rich-text>
                     <image class="jh-img" bindtap="privfn" data-src="{{item.img}}"  src="https://images.weserv.nl/?url={{item.img}}" hidden="{{!(tab==1)}}" mode="aspectFit" lazy-load="{{true}}" />
+                    
+                    <view hidden="{{!(tab==2)}}" class="pos">
+
+                        <image class="jh-img" mode="aspectFit" lazy-load="{{true}}" />
+                        <view class="play-div" hidden="{{twocount==index}}" bindtap="privfn" data-src="{{item.img}}"  >
+                            <image src="/style/play.png" class="play-icon"></image>
+                        </view>
+                    </view>
                 </view>
                 <view class="ji-bottom">
                     创建时间:{{item.ct||'暂无时间'}}

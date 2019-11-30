@@ -1,0 +1,162 @@
+page{
+  background-color:#eee;
+}
+.intro {
+  margin: 30px;
+  text-align: center;
+}
+
+.sc-b{
+  /* background-color:#eee; */
+  padding:1px 0;
+  box-sizing:border-box;
+}
+.j-item{
+  background-color:rgba(255,255,255,.5);
+  padding:0 12.5px;
+  /* margin:12.5px; */
+  /* border-radius:4px; */
+  animation:upd 1s linear;
+  -webkit-animation:upd 1s linear;
+  position:relative;
+}
+
+.ji-header{
+  
+  -moz-transform: translateY(-12.5px);
+  -ms-transform: translateY(-12.5px);
+  
+  -webkit-transform: translateY(-12.5px);
+  -o-transform: translateY(-12.5px);
+  transform: translateY(-12.5px);
+}
+.ji-bottom{
+  text-align:right;
+  padding-top:12.5px;
+  font-size:13px;
+  font-weight:bold;
+  font-style:italic;
+  -moz-transform: translateY(-12.5px);
+  -ms-transform: translateY(-12.5px);
+  
+  -webkit-transform: translateY(-12.5px);
+  -o-transform: translateY(-12.5px);
+  transform: translateY(-12.5px);
+}
+.more{
+  line-height:50px;
+  height:50px;
+  text-align:center;
+  font-size:14px;
+}
+.load{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.l-img{
+  height:20px;
+  width:40px;
+}
+.ji-title{
+  text-align: center;
+  padding-bottom:10px;
+}
+
+@keyframes upd{
+  0%{
+    opacity:0;
+    transform:translateY(-50px);
+  }
+  100%{
+    opacity:1;
+    transfrom:translateY(0);
+  }
+}
+
+
+@-webkit-keyframes upd{
+  0%{
+    opacity:0;
+    transform:translateY(-50px);
+  }
+  100%{
+    opacity:1;
+    transfrom:translateY(0);
+  }
+}
+
+
+.text-row{
+  margin-bottom:10px;
+  font-size:13px;
+}
+.text-row:active{
+  opacity:.7;
+}
+.ji-r-b{
+  position:absolute;
+  border:4px solid #F5D22F;
+  width:20px;
+  height:40px;
+  bottom:-8px;
+  left:-8px;
+  border-top-color:transparent;
+  border-right-color:transparent;
+}
+.ji-r-t{
+  position:absolute;
+  
+}
+
+.ji-out{
+  margin:12.5px;
+}
+.jo-top{
+  height:30px;
+  display:flex;
+}
+.jt-one{
+  flex: 1;
+  height: 30px;
+  background-color: rgba(255,255,255,.5);
+
+}
+.jt-two{
+  border: 15px solid rgba(255,255,255,.5);
+  border-top-color: transparent;
+  border-right-color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.j-t-o{
+  position: absolute;
+  width: 20px;
+  height: 4px;
+  background-color: #F5D22F;
+  transform: translateX(4px) translateY(-4px) rotateZ(45deg);
+
+}
+
+.nf-in{
+  display:inline-flex;
+  align-items:center;
+  background-color:rgba(255,255,255,.5);
+  transition:all .3s;
+  padding:3px 3px 3px 0;
+}
+.n-i-left{
+  display:flex;
+  padding:0 10px;
+  transition:all .3s;
+}
+.nil-input{
+  flex:1;
+  font-size:12px;
+}
+.opa2:active{
+  opacity:.7;
+}

@@ -18,11 +18,11 @@
             背景
           </view>
         </view>
-        <view class="fi-item" tt:if="{{show}}">
+        <!-- <view class="fi-item" tt:if="{{show}}">
           <view class="fi-text" catchtap="ropfn" data-val="{{true}}">
             打赏
           </view>
-        </view>
+        </view> -->
         <view class="fi-item">
           <view class="fi-text" catchtap="openStr">
             提示
@@ -47,7 +47,7 @@
    </view>
 </view>
 <!-- 打赏弹框 -->
-<view tt:if="{{show}}" class="reward {{rSta?'r-show':''}}" bindtap="ropfn" data-val="{{false}}">
+<!-- <view tt:if="{{show}}" class="reward {{rSta?'r-show':''}}" bindtap="ropfn" data-val="{{false}}">
    <view class="r-out" catchtap="zhefn" data-val="{{true}}">
      <view class="ro-top">
         <view class="r-in">
@@ -84,4 +84,4 @@
          <image class="rc-icon" src="/style/cancel.png" catchtap="ropfn" data-val="{{false}}"></image>
      </view>
    </view>
-</view>
+</view> -->

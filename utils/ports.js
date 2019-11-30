@@ -93,6 +93,29 @@ const lw={
             return http._get(apiU.xz+"/852-1",obj);
         }
     },
+    two1_gif: (data) => {
+        //随机生成动态笑话
+        if (typeof (data) === "object") {
+        var obj = {
+            ...data,
+            showapi_sign: "f923a02c5627424fb5d23b9bdabb7c3b",
+            showapi_appid: "105242",
+            len: 20
+        }
+        return http._get(apiU.xz + "/341-3", obj);
+        }
+    },
+    ji_page: (data) => {
+        //经典语录
+        if (typeof (data) === "object") {
+        var obj = {
+            ...data,
+            showapi_sign: "93a62d144ec1437cabcc104a26765806",
+            showapi_appid: "118397"
+        }
+        return http._get(apiU.xz + "/1646-1", obj);
+        }
+    },
     two:(data)=>{
         if(typeof(data)==="object"){
             var obj={

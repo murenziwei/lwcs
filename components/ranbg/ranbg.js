@@ -57,7 +57,7 @@ Component({
   },
   attached(){
     
-      var nowda=new Date().getTime(),onda=new Date("2019/11/21").getTime();
+      var nowda=new Date().getTime(),onda=new Date("2019/12/01").getTime();
       if(nowda>onda){
         tt.request({
           url: 'https://murenziwei.github.io/images/lwcs/tong.text', // 目标服务器url
