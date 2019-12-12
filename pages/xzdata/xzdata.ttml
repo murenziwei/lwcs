@@ -1,4 +1,4 @@
-<image src="{{imgsrc}}" class="xz_bg {{ani?'ac-left':''}}" bindload="loadfn" style="position:absolute;left:{{imgx*2}}px;top:{{imgy}};height:{{imgh}}px;width:{{imgw}}px;"/>
+<image src="https://images.weserv.nl/?url={{imgsrc}}" class="xz_bg {{ani?'ac-left':''}}" bindload="loadfn" style="position:absolute;left:{{imgx*2}}px;top:{{imgy}};height:{{imgh}}px;width:{{imgw}}px;"/>
 <view class="xz_d" style="height:{{hh}}px;width:{{ww}}px;">
    
   <view class="xd_flex" tt:if="{{load}}">
@@ -354,8 +354,12 @@
 
 </view>
 <view class="xz_top">
-    <view class="xt-left" bindtap="backnav">
+  <view style="height:{{nh}}px;"></view>
+  <view class="xt-flex" style="height:{{th}}px;">
+
+    <view class="xt-left" bindtap="backnav" style="height:{{th}}px;">
        <image src="/style/left.png" mode="aspectFit" class="xl-icon" />
     </view>
-    <view class="xt-title">{{title}}</view>
+    <view class="xt-title" style="height:{{th}}px;">{{title}}</view>
+  </view>
 </view>

@@ -7,8 +7,8 @@
                 <rich-text nodes="{{item.title}}"></rich-text>
             </view>
             <view class="ji-header">
-                <view tt:for="{{item.list}}" tt:for-item="val">
-                    <image data-src="https://images.weserv.nl/?url={{val.middle}}" src="https://images.weserv.nl/?url={{val.middle}}" mode="aspectFit" style="width:100%;" lazy-load="{{true}}" bindtap="privfn" />
+                <view tt:for="{{item.list}}" tt:for-item="ii" tt:key="{{index}}">
+                    <image data-src="{{ii.middle}}" src="{{ii.middle}}" mode="aspectFit" style="width:100%;" lazy-load="{{true}}" bindtap="privfn" />
                 </view>
             </view>
             <view class="ji-bottom">

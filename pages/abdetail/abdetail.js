@@ -71,10 +71,17 @@ Page({
             }else{
               var list=that.data.list,page=that.data.page+1;
               for(let i=0;i<result.length;i++){
-                for(let ii=0;ii<result[i].list.length;ii++){
-                  if(/www.zj005.com/.test(result[i].list[ii].middle)){
-                    result[i].list[ii].middle=result[i].list[ii].middle.replace("http:","https:");
-                  }
+                if(result[i].list.middle){
+
+                    var obj=result[i].list;
+                    result[i].list=[obj]
+                }else{
+
+                    for(let ii=0;ii<result[i].list.length;ii++){
+                      if(/www.zj005.com/.test(result[i].list[ii].middle)){
+                        result[i].list[ii].middle=result[i].list[ii].middle.replace("http:","https:");
+                      }
+                    }
                 }
               }
               list=list.concat(result);

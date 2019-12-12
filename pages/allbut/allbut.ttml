@@ -1,6 +1,6 @@
 <lw-bg changeS="{{changes}}" />
-
 <lw-top lwTitle="美图大全" bgColor="rgba(0,0,0,0)" isShow="{{true}}" />
+
 <view>
    <view tt:for="{{con}}" tt:for-item="one" class="list">
        <view class="l-title">{{one.name}}</view>

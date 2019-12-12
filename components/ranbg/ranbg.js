@@ -32,8 +32,8 @@ Component({
     str:`
     李伟初始在QQ、微信、支付宝、头条小程序已经上线，俺再也不用担心你找不到我了
     `,
-    strArr: ["你来了，你来啦，收藏这小程序再走吧"],
-    strSt:true,
+    strArr: ["李伟初始在QQ、微信、支付宝、头条小程序已经上线，俺再也不用担心你找不到我了","你来了，你来啦，收藏这小程序再走吧"],
+    strSt:false,
     listS:false,
     rSta:false,
 
@@ -57,7 +57,7 @@ Component({
   },
   attached(){
     
-      var nowda=new Date().getTime(),onda=new Date("2019/12/01").getTime();
+      var nowda=new Date().getTime(),onda=new Date("2019/12/05").getTime();
       if(nowda>onda){
         tt.request({
           url: 'https://murenziwei.github.io/images/lwcs/tong.text', // 目标服务器url
@@ -85,7 +85,7 @@ Component({
     go_update(){
 
       // 页面被展示
-      var nowda = new Date().getTime(), onda = new Date("2019/11/22").getTime();
+      var nowda = new Date().getTime(), onda = new Date("2019/12/05").getTime();
       if (nowda > onda) {
         this.setData({
           show: true

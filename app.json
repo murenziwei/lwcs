@@ -6,7 +6,8 @@
     "pages/xzdata/xzdata",
     "pages/allbut/allbut",
     "pages/abdetail/abdetail",
-    "pages/ji/ji"
+    "pages/ji/ji",
+    "pages/ad/ad"
   ],
   "window":{
     "backgroundTextStyle":"light",

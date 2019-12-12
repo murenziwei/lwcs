@@ -28,7 +28,9 @@ Page({
     imgw:0,imgh:0,imgx:0,imgy:0,
     imgsrc:'',
     consName:'',
-    imgload:false,isget:false
+    imgload:false,isget:false,
+    nh:'',
+    th:46
   },
   onLoad: function (options) {
 
@@ -46,27 +48,24 @@ Page({
         var ww=res.screenWidth,hh=res.screenHeight;
         that.setData({
           ww,
-          hh
+          hh,
+          nh: res.statusBarHeight
         })
         
-        tt.getImageInfo({
-          src:that.data.imgsrc,
-          success(res){
-            console.log(res,"可我意思去");
-            var bili=res.width/res.height;
-            var imgh=hh,imgw=hh*bili;
-            var imgx=(ww-imgw)/2,imgy=(hh-imgh)/2;
-            that.setData({
-              imgh,imgw,imgx,imgy,isget:true
-            })
-            if(that.data.imgload){
-              that.setData({
-                load:true
-              })
-            }
+        
 
-          }
+        var bili = 1024 / 768;
+        var imgh = hh, imgw = hh * bili;
+        var imgx = (ww - imgw) / 2, imgy = (hh - imgh) / 2;
+        that.setData({
+          imgh, imgw, imgx, imgy, isget: true
         })
+        if (that.data.imgload) {
+          that.setData({
+            load: true
+          })
+        }
+        
         setInterval(()=>{
           that.setData({
             ani:that.data.ani?false:true

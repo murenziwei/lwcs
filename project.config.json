@@ -10,12 +10,34 @@
 	"projectname": "zjsm",
 	"condition": {
 		"miniprogram": {
-			"current": -1,
+			"current": 1,
 			"list": [
 				{
 					"id": 0,
 					"name": "星座运势",
 					"pathName": "pages/xingz/xingz",
+					"query": "",
+					"scene": "011001",
+					"referrerInfo": {
+						"appId": "",
+						"extraData": ""
+					}
+				},
+				{
+					"id": 1,
+					"name": "美图大全",
+					"pathName": "pages/allbut/allbut",
+					"query": "",
+					"scene": "011001",
+					"referrerInfo": {
+						"appId": "",
+						"extraData": ""
+					}
+				},
+				{
+					"id": 2,
+					"name": "个人博客",
+					"pathName": "pages/ad/ad",
 					"query": "",
 					"scene": "011001",
 					"referrerInfo": {

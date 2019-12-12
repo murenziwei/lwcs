@@ -1,0 +1,34 @@
+<view class="muc_f" style="width:{{mucS?325:88}}px;">
+  <view class="s_muc">
+    <view class="audio-flex">
+      <view class="af-left" style="width:67px;height:67px;position:relative;display:flex;align-items:center;justify-content:center;background-color:#fff;z-index:2;"  bindtap="{{isopen?'pausefn':'playfn'}}" >
+          <image src="{{muc.picurl}}" class="m_poster {{isopen?'use_rl':''}}"></image>
+          <!-- <view bindtap="playfn">播放</view>
+          <view bindtap="pausefn">暂停</view> -->
+          <image class="cont-s {{isopen?'active':''}}" src="../..{{isopen?'/style/m_stop.png':'/style/m_play.png'}}"></image>
+      </view>
+      <view class="af-right" style="width:237px;opacity:{{mucS?1:0}};transform:translateX({{mucS?0:-237}}px);z-index:{{mucS?1:-1}}">
+          <view class="ar-in">
+             <view class="a-i-name">
+                <text class="a-over">{{muc.name||'未知歌名'}}</text>
+                <text class="ain-txt">- {{muc.artistsname||'未知歌手'}}</text>
+             </view>
+          </view>
+          <!-- <view>
+            <slider max="{{slmax}}" value="{{slv}}" activeColor="#2562C5" backgroundColor="rgba(42,122,236,.1)" block-size="12" bindchange="drawEnd" left-icon="cancel" right-icon="success_no_circle" bindchanging="drawfn" />
+          </view> -->
+          <view class="bot_time">
+             <text class="opa2" style="color:#000;font-weight:bold;" bindtap="que_muc">切歌</text>
+             <text>{{cText}}</text>
+             <!-- <text>{{dText}}</text> -->
+          </view>
+      </view>
+    </view>
+    <view>
+    
+    <view class="sm-right" bindtap="showMuc" style="transform:translateX({{mucS?0:-237}}px);">
+      <image src="../..{{mucS?'/style/l2.png':'/style/r2.png'}}" style="width:14px;height:20px;" mode="aspectFit"></image>
+    </view>
+    </view>
+  </view>
+</view>

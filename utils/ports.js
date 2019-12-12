@@ -22,6 +22,12 @@ function formatterDateTime() {
     return datetime;
 }
 const lw={
+    
+    uomg_music: () => {
+        var s = ["热歌榜", "新歌榜", "飙升榜", "抖音榜", "电音榜"];
+        return http._get(apiU.uomg + "/api/rand.music", { format: "json", sort: s[Math.floor(Math.random() * s.length)] });
+
+    },
     ran_img: () => {
         return http._get(apiU.xjh + "/random_img.php", {return:"json"});
     },
@@ -77,7 +83,7 @@ const lw={
                 ...data,
                 showapi_sign:"f923a02c5627424fb5d23b9bdabb7c3b",
                 showapi_appid:"105242",
-                maxResult:2
+                showapi_res_gzip:1
             }
             return http._get(apiU.xz+"/852-2",obj);
         }

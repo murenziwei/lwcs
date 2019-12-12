@@ -10,6 +10,8 @@ Page({
     more_d:true,
     ww:'',
     hh:'',
+    th:46,
+    nh:'',
     page:1,
     list:[
         [
@@ -19,7 +21,9 @@ Page({
       []
     ],
     pArr:[1,1],
-    jkArr: ['two1', 'two1_s','two1_gif']
+    jkArr: ['two1', 'two1_s','two1_gif'],
+    ismenu:false,
+    show:false
   },
   onLoad: function () {
     that=this;
@@ -29,7 +33,8 @@ Page({
         console.log(res,"系统信息");
         that.setData({
           hh:res.windowHeight,
-          ww:res.windowWidth
+          ww:res.windowWidth,
+          nh: res.statusBarHeight
         })
       }
     })
@@ -38,6 +43,11 @@ Page({
   },
   ...{
     
+    showmenu(){
+      this.setData({
+        ismenu:!this.data.ismenu
+      });
+    },
     copyTBL(e) {
       var data = e.currentTarget.dataset.str;
       console.log(e, "这是？");
@@ -60,11 +70,12 @@ Page({
       }
     },
     get_data(){
-      var nowda=new Date().getTime(),onda=new Date("2019/11/21").getTime();
+      var nowda=new Date().getTime(),onda=new Date("2019/12/14").getTime();
       if(nowda>onda){
         let tabA=["文本","图片","动态"];
         that.setData({
-          tabArr:tabA
+          tabArr:tabA,
+          show:true
         })
       }
       

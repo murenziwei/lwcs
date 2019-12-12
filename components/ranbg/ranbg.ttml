@@ -6,13 +6,13 @@
    <view class="fr-in">
      <view class="fi-item">
        <view class="fi-menu {{listS?'topact':'toplea'}}">
-         <view class="fm-list" tt:if="{{show}}" tt:for="{{menu}}">
+         <!-- <view class="fm-list" tt:if="{{show}}" tt:for="{{menu}}">
             <view class="f-l-left {{item.ishid?'rightact':'rightlea'}}" catchtap="copyTBL" data-str="{{item.val}}">{{item.text}}</view>
             <view class="f-l-text">
               <image src="{{item.icon}}" class="flt-img" mode="aspectFit" data-ind="{{index}}" catchtap="menuOp"></image>
             </view>
          </view>
-         
+          -->
         <view class="fi-item">
           <view class="fi-text" catchtap="bgsave" data-bg="{{bgu}}">
             背景
@@ -85,3 +85,4 @@
      </view>
    </view>
 </view> -->
+<lw-audio />

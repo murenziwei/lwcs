@@ -38,7 +38,6 @@ Page({
   },
   ...{
     searchfn(){
-      if(this.data.name){
         this.setData({
           load:true,
           page:1,
@@ -46,12 +45,7 @@ Page({
           more_d:true
         })
         this.addfn();
-      }else{
-        tt.showToast({
-          title:"搜索名字不能为空哦~",
-          icon:"none"
-        })
-      }
+      
     },
     inputfn(e){
       this.setData({

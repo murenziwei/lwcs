@@ -22,7 +22,7 @@ Page({
   },
   ...{
     get_data(){
-      var nowda=new Date().getTime(),onda=new Date("2019/12/01").getTime();
+      var nowda=new Date().getTime(),onda=new Date("2019/12/14").getTime();
       if(nowda>onda){
         let con=[
           {

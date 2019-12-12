@@ -7,7 +7,7 @@ page{
 }
 
 .sc-b{
-  /* background-color:#eee; */
+  /*background-color:#eee;*/
   padding:1px 0;
   box-sizing:border-box;
 }
@@ -16,15 +16,15 @@ page{
   margin:12.5px;
   border-radius:4px;
   animation:upd 1s linear;
-  -webkit-animation:upd 1s linear;
+  -webkit-animation:upd 1s linear
 }
 
 .ji-bottom{
   text-align:right;
-  padding:12.5px 0;
+  padding-top:12.5px;
 }
 .j-item{
-  padding:12.5px 12.5px 0 12.5px;
+  padding:12.5px;
 }
 .more{
   line-height:50px;
@@ -40,10 +40,6 @@ page{
 .l-img{
   height:20px;
   width:40px;
-}
-.ji-title{
-  text-align: center;
-  padding-bottom:10px;
 }
 
 @keyframes upd{
@@ -70,21 +66,31 @@ page{
 }
 
 
+.ji-title{
+  text-align: center;
+  padding-bottom:10px;
+}
+
+
+
+
 .header{
   display:flex;
   align-items:center;
   justify-content: center;
-  height:50px;
-  /* background-color:#eee; */
+  /*background-color:#eee;*/
+  position:absolute;
+  transition:all .3s;
+  left:12.5px;
 }
 .h-flex{
-  height:30px;
-  background-color:#fff;
+  /* height:30px; */
+  background-color:rgba(255,255,255,.7);
   display:flex;
   align-items:center;
   position:relative;
-  border-radius:30px;
-  overflow:hidden;
+  flex-direction:column;
+  box-shadow:2px 2px 2px rgba(0,0,0,.2);
 }
 .hf-tab{
   height:30px;
@@ -101,8 +107,6 @@ page{
   width:100%;
 }
 
-
-
 .play-div{
   position:absolute;
   top:0;left:0;right:0;bottom:0;
@@ -115,3 +119,28 @@ page{
   height:50px;
 }
 .pos{position:relative;}
+
+
+.nf-in{
+  height:25px;
+  position:relative;
+}
+.nf-in:a::active{
+  opacity:.7;
+}
+.nf-img{
+  width:25px;
+  height:25px;
+  margin:0 12.5px;
+}
+
+.imt{
+  z-index:9999;
+  opacity:1;
+  top:30px;
+}
+.imf{
+  z-index:-1;
+  opacity:0;
+  top:50px;
+}

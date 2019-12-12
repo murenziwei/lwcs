@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "lw-bg": "/components/ranbg/ranbg"
+  },
   "navigationBarTitleText": "经典鸡汤",
   "navigationStyle": "custom"
 }

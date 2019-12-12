@@ -17,7 +17,7 @@
         </view>    
     </view>
 </view>
-<scroll-view class="sc-b" scroll-y style="height:{{hh}}px;" bindscrolltolower="addfn">
+<scroll-view class="sc-b" scroll-y style="height:{{hh-5}}px;" bindscrolltolower="addfn">
     <view class="jode">
         <view class="ji-out" tt:for="{{list}}" tt:key="{{index}}">
           <view class="jo-top">

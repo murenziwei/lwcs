@@ -1,5 +1,1 @@
-<view>
-    <view class="ad-item" tt:for="{{adarr}}">
-        <ad unit-id="{{item.id}}"></ad>
-    </view>
-</view>
+<web-view src="https://www.cnblogs.com/murenziwei/" />
