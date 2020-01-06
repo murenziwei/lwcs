@@ -113,5 +113,7 @@ Page({
         delta:1
       })
     }
+  },
+  onShareAppMessage(){
   }
 })

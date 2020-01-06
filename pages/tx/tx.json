@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "lw-emoji":"/components/emoji/emoji"
+  }
+}

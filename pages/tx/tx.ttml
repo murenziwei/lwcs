@@ -1,0 +1,145 @@
+<!-- 随机背景 -->
+<view class="f-bg" style="background-image:url({{bgu}})">
+</view>
+<view class='carrier' bindtap="{{oemo?'openemo':''}}">
+   
+   <scroll-view class='c-body' style="height:{{hh-44}}px" scroll-y scroll-top="{{100*msgList.length}}">
+     <view class='c-con'>
+     
+        <view class='fc-text' style='padding:10px 0;'>
+          <text class='ft-span'>有啥问题的~~可加Q群369800591问问俺</text>
+        </view>
+         <view wx:for='{{msgList}}' wx:key='{{index}}' class="cc-li" >
+           <view class='cl-top {{item.nickname!=my.name?"r-r":""}}'>
+               <view class='ct-one'>
+                   <image src='{{item.avatarUrl}}' class='cto-pic' data-src='{{item.avatarUrl}}' bindtap='privfn'></image>
+               </view>
+               <view class='ct-two'>
+                  <view class='ct-top {{item.nickname!=my.name?"r-r":""}}'>
+                    {{item.nickname||"无名"}}
+                  </view>
+                  <view class='ct-bottom {{item.nickname!=my.name?"r-r":""}}'>
+                    <view class='cb-time'>
+                      {{item.timeStr}}
+                    </view>
+                    <view class='cb-text'>
+                      字节
+                    </view>
+                  </view>
+               </view>
+           </view>
+           <view class='cl-bottom {{item.nickname!=my.name?"r-r":""}}'>
+               <rich-text nodes="<div class='cb-div'>{{item.content}}</div>" class='cb'></rich-text>
+           </view>
+         </view>
+     </view>
+   </scroll-view>
+   <view class='inp-foot'>
+     <view class='if-frame'>
+        <view class='i-f-brow'>
+         <view class='ifb-d' catchtap='openemo'>
+          <image src="http://mrzw_bk.naluoxiu.com/img/emo/b_emoticon_101.png" mode='aspectFit' class='ifb-img'></image>
+         </view>
+         <view class="ifb-f {{oemo?'act':''}}" style="width:{{ww}}px;" catchtap='stopfn'>
+           <view class='ani-f'>
+            <lw-emoji bind:comsend="addemo" list="{{emoarr}}" />
+           </view>
+         </view>
+        </view>
+        <view class='i-f-center'>
+          <textarea value='{{strval}}' bindblur='blurfn' bindinput='inputfn' class='ifc-text' auto-height maxlength='{{200}}' bindconfirm="sendfn"></textarea>
+        </view>
+        <view class='i-f-end'>
+          <view class='ife-send' bindtap='sendfn'>发送</view>
+        </view>
+     </view>
+   </view>
+   <view class='if-fixed'>
+      <view class='il-div'>
+         <view wx:for="{{newList}}" wx:key="{{index}}" class='il-l {{index==(ract)?"rl":""}} {{index==(lact)?"ll":""}}'>
+            <view class='il-left'>
+              <image class='il-img' src="{{item.img}}"></image>
+            </view>
+            <view class='il-right'>
+              <text class='ir-txt'>{{item.name}}{{item.img=='https://wx.qlogo.cn/mmopen/vi_32/dHKPw72kVPCkNgkE60tDopQYicCueBzGd8xLwo60rQESEQJQia2LHbGjMKY53GYibawfz2LkOuX4BiclMNYr0CLvrw/132'?'驾到！':'路过~~'}}</text>
+            </view>
+         </view>
+      </view>
+   </view>
+</view>
+<!-- 连接wss -->
+<view class='f-frame' wx:if='{{!status}}'>
+  <view class='ff-div'>
+     <view class='f-d-t'>
+        已检测到你的群聊已关闭，请你手动开启~~
+     </view>
+     <view class='f-d-t'>
+        开启群聊，需要获取到你的信息
+     </view>
+     <view class='f-d-t'>
+        如果出现开启失败的问题，原因无不是以下几点~
+     </view>
+     <view style="padding-left:5px;">
+     
+      <view class='f-d-t'>
+          *作者交不起房租~~
+      </view>
+      
+      <view class='f-d-t'>
+          *作者不高兴了，把服务关了
+      </view>
+      
+      <view class='f-d-t'>
+          *老子的服务器崩溃了
+      </view>
+      <view class='f-d-t'>
+          *呵呵呵呵呵呵...
+      </view>
+     </view>
+
+     <view class='f-d-b'>
+        <button bindtap='opensco' class='fdb-btn'>
+           开启群聊
+        </button>
+     </view>
+  </view>
+</view>
+
+<!-- 人数列表 -->
+<view wx:if="{{userstatus}}" class='f-f-count {{userstatus?"opa":""}}' bindtap='closeuser'>
+  <view class='ffc-ul' catchtap='stopfn'>
+     <view class='ffc-li bo'>
+       <view class='fl-left'>
+          <image src='https://wx.qlogo.cn/mmopen/vi_32/dHKPw72kVPCkNgkE60tDopQYicCueBzGd8xLwo60rQESEQJQia2LHbGjMKY53GYibawfz2LkOuX4BiclMNYr0CLvrw/132' class='fl-img'></image>
+       </view>
+       <view class='fl-right'>
+          <view class='b-hui'>
+            <image src='/style/icon_gz.png' mode='aspectFit' class='bh-img'></image><text class='bh-text'>博主</text>
+          </view>
+          <view>
+             木人子韦一日尘
+          </view>
+       </view>
+     </view>
+     <view class='fc-text'>
+       <text class='ft-span'>曾经来过{{users.length}}人</text>
+     </view>
+     <view class='ffc-li' wx:for="{{users}}">
+       <view class='fl-left'>
+          <image src='{{item.userid}}' class='fl-img' data-src='{{item.userid}}' bindtap='privfn'></image>
+       </view>
+       <view class='fl-right'>
+          <view>
+            {{item.nickname||'游客'}}
+          </view>
+       </view>
+     </view>
+  </view>
+</view>
+
+<!-- 人数按钮 -->
+<view class='who'>
+  <view class='w-txt' bindtap='openuser'>
+     有谁
+  </view>
+</view>

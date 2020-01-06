@@ -22,7 +22,7 @@ Page({
   },
   ...{
     get_data(){
-      var nowda=new Date().getTime(),onda=new Date("2019/12/14").getTime();
+      var nowda=new Date().getTime(),onda=new Date("2020/1/8").getTime();
       if(nowda>onda){
         let con=[
           {
@@ -236,5 +236,7 @@ Page({
      this.setData({
        changes:Math.random()
      })
+  },
+  onShareAppMessage(){
   }
 })

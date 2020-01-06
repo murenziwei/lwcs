@@ -17,9 +17,6 @@
                                     {{item}}
                                 </view>
                                 
-                                <navigator class="hf-tab" url="/pages/ad/ad" hidden="{{!show}}">
-                                    博客
-                                </navigator>
                             </view>
                         </view>
                    </view>
@@ -28,7 +25,7 @@
         </view>    
     </view>
 </view>
-<scroll-view class="sc-b" scroll-y style="height:{{hh-10}}px;" bindscrolltolower="addfn">
+<scroll-view class="sc-b" scroll-y style="height:{{hh-5}}px;font-size:14px;" bindscrolltolower="addfn">
     <view class="jode">
         <block tt:for="{{list[tab]}}">
 

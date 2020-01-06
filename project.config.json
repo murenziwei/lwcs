@@ -10,7 +10,7 @@
 	"projectname": "zjsm",
 	"condition": {
 		"miniprogram": {
-			"current": 1,
+			"current": -1,
 			"list": [
 				{
 					"id": 0,
@@ -38,6 +38,17 @@
 					"id": 2,
 					"name": "个人博客",
 					"pathName": "pages/ad/ad",
+					"query": "",
+					"scene": "011001",
+					"referrerInfo": {
+						"appId": "",
+						"extraData": ""
+					}
+				},
+				{
+					"id": 3,
+					"name": "聚义会",
+					"pathName": "pages/tx/tx",
 					"query": "",
 					"scene": "011001",
 					"referrerInfo": {

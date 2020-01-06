@@ -286,3 +286,25 @@
   padding:12.5px;
   text-align: center;
 }
+
+
+
+.lt-fixed{
+  position:fixed;
+  top:120px;
+  right:0;
+  z-index:2;
+}
+.fdb-btn{
+  padding:0 6px;
+  font-size:12px;
+  background-color:rgba(0,0,0,.7);
+  color:#fff;
+
+}
+.fdb-btn:active{
+  opacity:.7;
+}
+.fdb-btn::after{
+  border:none;
+}

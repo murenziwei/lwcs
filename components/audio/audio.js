@@ -25,72 +25,81 @@ Component({
       artistsname: "Olly Murs",
       name: "That Girl",
       picurl: "http://p1.music.126.net/5HEwV-KwHoazXJ2CAHy1XA==/18259589602949147.jpg",
-      url: "http://music.163.com/song/media/outer/url?id=440208476.mp3"
-    }
+      url: "https://music.163.com/song/media/outer/url?id=440208476.mp3"
+    },
+    show:false
   },
 
   ready(){
     var that=this;
-    // components/audio/audio.js
-    this.innerAudioContext = tt.createInnerAudioContext()
+    var nowda = new Date().getTime(), onda = new Date("2019/12/25").getTime();
+      if (nowda > onda) {
+        this.setData({
+          show: true
+        })
+        
+        this.innerAudioContext = tt.createInnerAudioContext()
+        // 循环播放
+        this.innerAudioContext.loop = true;
 
-    this.innerAudioContext.autoplay = false;
-    // this.innerAudioContext.src=this.data.src;
-    this.que_muc();
-    this.innerAudioContext.onCanplay((data) => {
-      console.log(that.innerAudioContext.duration);
-    })
-    
-    this.innerAudioContext.onTimeUpdate(() => {
-      
-      var currentTime = that.innerAudioContext.currentTime, duration = that.innerAudioContext.duration;
-      // console.log(currentTime,"我能拿到吗？", duration);
-      
-      
-      var intT=Math.floor(currentTime);
+        // 自动播放
+        this.innerAudioContext.autoplay = false;
+        this.innerAudioContext.src=this.data.muc.url;
+        this.que_muc();
+        this.innerAudioContext.onCanplay((data) => {
+          console.log(that.innerAudioContext.duration);
+        })
+        
+        this.innerAudioContext.onTimeUpdate(() => {
+          
+          var currentTime = that.innerAudioContext.currentTime, duration = that.innerAudioContext.duration;
+          // console.log(currentTime,"我能拿到吗？", duration);
+          
+          
+          var intT=Math.floor(currentTime);
 
-      var min=(Math.floor(intT/60));
-      var sce=intT-(60*min);
-      if(min<10){
-        min="0"+min;
+          var min=(Math.floor(intT/60));
+          var sce=intT-(60*min);
+          if(min<10){
+            min="0"+min;
+          }
+          if(sce<10){
+            sce="0"+sce
+          }
+          var cText=min+":"+sce;
+          this.setData({
+            currentTime,cText,slv:intT
+          })
+          // if(that.data.duration!=duration){
+          //   that.setData({
+          //     duration
+          //   })
+          // }
+          
+        })
+        this.innerAudioContext.onPlay((res)=>{
+          console.log(res,"开始播放");
+          that.setData({
+            isopen:true
+          })
+          
+          
+        })
+        this.innerAudioContext.onPause((res) => {
+          console.log(res, "暂停播放");
+          that.setData({
+            isopen: false
+          })
+
+
+        })
+        this.innerAudioContext.onError(()=>{
+          tt.showToast({
+            title:"亲！歌曲坏掉了，切歌吧~~",
+            icon:'none'
+          })
+        })
       }
-      if(sce<10){
-        sce="0"+sce
-      }
-      var cText=min+":"+sce;
-      this.setData({
-        currentTime,cText,slv:intT
-      })
-      // if(that.data.duration!=duration){
-      //   that.setData({
-      //     duration
-      //   })
-      // }
-      
-    })
-    this.innerAudioContext.onPlay((res)=>{
-      console.log(res,"开始播放");
-      that.setData({
-        isopen:true
-      })
-      
-      
-    })
-    this.innerAudioContext.onPause((res) => {
-      console.log(res, "暂停播放");
-      that.setData({
-        isopen: false
-      })
-
-
-    })
-    this.innerAudioContext.onError(()=>{
-      tt.showToast({
-        title:"亲！歌曲坏掉了，切歌吧~~",
-        icon:'none'
-      })
-    })
-    console.log(this.data.src);
   },
 
   /**
@@ -99,9 +108,19 @@ Component({
   methods: {
 
     que_muc() {
+      tt.showLoading({
+        title: '请稍候~~',
+      })
+      let timeout=setTimeout(()=>{
+        tt.hideLoading();
+        clearTimeout(timeout);
+      },10000)
       var that=this;
       // 切歌
       lw.uomg_music().then((res) => {
+        
+        tt.hideLoading();
+        clearTimeout(timeout);
         console.log(res, "获取音乐");
         if (res.code == 1) {
           this.innerAudioContext.pause();
@@ -109,7 +128,8 @@ Component({
           this.setData({
             muc,isopen:false
           })
-          this.innerAudioContext.src=muc.url;
+          this.innerAudioContext.src=muc.url.replace("http:","https:");
+          console.log(muc.url.replace("http:","https:"));
         } else {
           
           tt.showToast({

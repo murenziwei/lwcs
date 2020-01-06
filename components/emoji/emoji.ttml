@@ -1,0 +1,13 @@
+<view class='emo'>
+   <view class='emo-out'>
+      <view class='eo-ul'>
+        <view class='eo-li' wx:for="{{list}}">
+         <view class='el-div' catchtap='clickfn' data-src='[{{item}}]'>
+         
+           <image class='el-img' src='http://mrzw_bk.naluoxiu.com/img/emo/{{item}}.png' mode='aspectFit'></image>
+         </view>
+        </view>
+      </view>
+      <view></view>
+   </view>
+</view>

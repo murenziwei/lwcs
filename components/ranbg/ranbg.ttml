@@ -23,7 +23,7 @@
             打赏
           </view>
         </view> -->
-        <view class="fi-item">
+        <view class="fi-item" tt:if="{{show}}">
           <view class="fi-text" catchtap="openStr">
             提示
           </view>
@@ -36,7 +36,7 @@
    </view>
 </view>
 <!-- 通知栏文本信息 -->
-<view class="pop {{strSt?'act':''}}">
+<view class="pop {{strSt?'act':''}}" hidden="{{!show}}">
    <view class="p-in">
       <view class="pi-content" catchtap="ropfn" data-val="{{true}}">
          <rich-text nodes="{{str}}"></rich-text>
@@ -85,4 +85,10 @@
      </view>
    </view>
 </view> -->
-<lw-audio />
+<!-- <lw-audio /> -->
+
+<view class='lt-fixed' tt:if="{{show}}">
+   <button bindtap="bgufn" class='fdb-btn'>
+      聊天会
+   </button>
+</view>

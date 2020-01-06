@@ -32,7 +32,7 @@ Component({
     str:`
     李伟初始在QQ、微信、支付宝、头条小程序已经上线，俺再也不用担心你找不到我了
     `,
-    strArr: ["李伟初始在QQ、微信、支付宝、头条小程序已经上线，俺再也不用担心你找不到我了","你来了，你来啦，收藏这小程序再走吧"],
+    strArr: ["李伟初始在QQ、微信、支付宝、头条小程序已经上线，俺再也不用担心你找不到我了"],
     strSt:false,
     listS:false,
     rSta:false,
@@ -57,7 +57,7 @@ Component({
   },
   attached(){
     
-      var nowda=new Date().getTime(),onda=new Date("2019/12/05").getTime();
+      var nowda=new Date().getTime(),onda=new Date("2020/1/5").getTime();
       if(nowda>onda){
         tt.request({
           url: 'https://murenziwei.github.io/images/lwcs/tong.text', // 目标服务器url
@@ -82,10 +82,43 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    
+    bgufn() {
+      tt.login({
+        success(res) {
+          tt.getSetting({
+            success(res){
+              if(!res.authSetting["scope.userInfo"]){
+                tt.authorize({
+                  scope: "scope.userInfo",
+                  success(res) {
+                    // 用户同意授权用户信息
+                    if(res.data["scope.userInfo"]=="ok"){
+                      
+                      tt.navigateTo({
+                        url: '/pages/tx/tx',
+                      })
+                    }
+                  }
+                });
+              }else{
+
+                tt.navigateTo({
+                  url: '/pages/tx/tx',
+                })
+              }
+            }
+          })
+        },
+        fail(res) {
+          console.log(`login调用失败`);
+        }
+      });
+    },
     go_update(){
 
       // 页面被展示
-      var nowda = new Date().getTime(), onda = new Date("2019/12/05").getTime();
+      var nowda = new Date().getTime(), onda = new Date("2020/1/5").getTime();
       if (nowda > onda) {
         this.setData({
           show: true

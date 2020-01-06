@@ -1,0 +1,22 @@
+/* components/emoji/emoji.wxss */
+.el-img{
+  width:25px;
+  height:25px;
+  display:block;
+}
+.eo-li{
+  padding:4px;
+  display:inline-block;
+}
+.eo-li:active{
+  opacity:.7;
+}
+.el-div{
+  padding:5px;
+  background-color:#eee;
+}
+.eo-ul{
+  padding:5px;
+  max-height:300px;
+  overflow-y:scroll;
+}

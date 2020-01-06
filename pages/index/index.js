@@ -70,7 +70,7 @@ Page({
       }
     },
     get_data(){
-      var nowda=new Date().getTime(),onda=new Date("2019/12/14").getTime();
+      var nowda=new Date().getTime(),onda=new Date("2020/1/8").getTime();
       if(nowda>onda){
         let tabA=["文本","图片","动态"];
         that.setData({
@@ -156,5 +156,8 @@ Page({
      this.setData({
        changes:Math.random()
      })
+  },
+  
+  onShareAppMessage(){
   }
 })

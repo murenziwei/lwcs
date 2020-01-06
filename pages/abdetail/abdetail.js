@@ -112,5 +112,7 @@ Page({
      this.setData({
        changes:Math.random()
      })
+  },
+  onShareAppMessage(){
   }
 })

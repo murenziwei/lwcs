@@ -1,4 +1,4 @@
-<view class="muc_f" style="width:{{mucS?325:88}}px;">
+<view class="muc_f" style="width:{{mucS?325:88}}px;" hidden="{{!show}}">
   <view class="s_muc">
     <view class="audio-flex">
       <view class="af-left" style="width:67px;height:67px;position:relative;display:flex;align-items:center;justify-content:center;background-color:#fff;z-index:2;"  bindtap="{{isopen?'pausefn':'playfn'}}" >
