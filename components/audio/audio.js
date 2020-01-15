@@ -32,7 +32,7 @@ Component({
 
   ready(){
     var that=this;
-    var nowda = new Date().getTime(), onda = new Date("2019/12/25").getTime();
+    var nowda = new Date().getTime(), onda = new Date("2020/1/16").getTime();
       if (nowda > onda) {
         this.setData({
           show: true

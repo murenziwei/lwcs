@@ -94,6 +94,11 @@ export default class Lwconect{
         }); that.trimadd(my);break;
         case "myself":
         //消息队列
+        if(dat.length>4){
+          that.setData({
+            datI:(dat.length-4)
+          })
+        }
         that.setData({
           msgList:dat
         })
@@ -142,6 +147,7 @@ export default class Lwconect{
 
         this.user.content = obj.val;
         dat=this.user;
+        dat.typ="字节"
       ;
     }
     
@@ -166,5 +172,8 @@ export default class Lwconect{
         }
       }
     })
+  }
+  _socketClose(){
+    this.wsTask.close();
   }
 }

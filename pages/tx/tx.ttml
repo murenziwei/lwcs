@@ -9,7 +9,11 @@
         <view class='fc-text' style='padding:10px 0;'>
           <text class='ft-span'>有啥问题的~~可加Q群369800591问问俺</text>
         </view>
-         <view wx:for='{{msgList}}' wx:key='{{index}}' class="cc-li" >
+        
+         <view class='ft-more' tt:if='{{datI>0}}'>
+          <view class='fm-btn' bindtap='loadmore'>加载更多</view>
+         </view>
+         <view tt:for='{{msgList}}' tt:key='{{index}}' class="cc-li"  tt:if="{{index>=datI}}">
            <view class='cl-top {{item.nickname!=my.name?"r-r":""}}'>
                <view class='ct-one'>
                    <image src='{{item.avatarUrl}}' class='cto-pic' data-src='{{item.avatarUrl}}' bindtap='privfn'></image>
@@ -23,7 +27,7 @@
                       {{item.timeStr}}
                     </view>
                     <view class='cb-text'>
-                      字节
+                      {{item.typ}}
                     </view>
                   </view>
                </view>
@@ -56,7 +60,7 @@
    </view>
    <view class='if-fixed'>
       <view class='il-div'>
-         <view wx:for="{{newList}}" wx:key="{{index}}" class='il-l {{index==(ract)?"rl":""}} {{index==(lact)?"ll":""}}'>
+         <view tt:for="{{newList}}" tt:key="{{index}}" class='il-l {{index==(ract)?"rl":""}} {{index==(lact)?"ll":""}}'>
             <view class='il-left'>
               <image class='il-img' src="{{item.img}}"></image>
             </view>
@@ -68,7 +72,7 @@
    </view>
 </view>
 <!-- 连接wss -->
-<view class='f-frame' wx:if='{{!status}}'>
+<view class='f-frame' tt:if='{{!status}}'>
   <view class='ff-div'>
      <view class='f-d-t'>
         已检测到你的群聊已关闭，请你手动开启~~
@@ -106,7 +110,7 @@
 </view>
 
 <!-- 人数列表 -->
-<view wx:if="{{userstatus}}" class='f-f-count {{userstatus?"opa":""}}' bindtap='closeuser'>
+<view tt:if="{{userstatus}}" class='f-f-count {{userstatus?"opa":""}}' bindtap='closeuser'>
   <view class='ffc-ul' catchtap='stopfn'>
      <view class='ffc-li bo'>
        <view class='fl-left'>
@@ -124,7 +128,7 @@
      <view class='fc-text'>
        <text class='ft-span'>曾经来过{{users.length}}人</text>
      </view>
-     <view class='ffc-li' wx:for="{{users}}">
+     <view class='ffc-li' tt:for="{{users}}">
        <view class='fl-left'>
           <image src='{{item.userid}}' class='fl-img' data-src='{{item.userid}}' bindtap='privfn'></image>
        </view>

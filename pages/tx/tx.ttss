@@ -314,3 +314,18 @@
 .c-con{
   padding-bottom:12.5px;
 }
+
+
+.ft-more{
+  display:flex;
+  align-items:center;
+  justify-content: center; 
+}
+.fm-btn{
+  padding:5px 10px;
+  font-size:12px;
+  background-color:#eee;
+}
+.fm-btn:active{
+  opacity: 0.7;
+}

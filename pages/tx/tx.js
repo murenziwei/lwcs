@@ -8,6 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    datI:0,
     users:[],
     msgList:[],
     comeList:[],
@@ -29,6 +30,11 @@ Page({
     bgu: '//img.xjh.me//desktop//img//62062343_p0.jpg'
   },
   ...{
+    loadmore() {
+      this.setData({
+        datI:(this.data.datI-10)
+      })
+    },
     opensco(){
       var that=this;
       tt.login({
@@ -175,10 +181,9 @@ Page({
       })
     },
     addemo(dat){
-      console.log(dat,"请求");
       var cur=this.data.cur,str=this.data.strval,obj=dat.detail;
       if(cur>-1){
-        var one = str.substring(0, cur), two = str.substring(cur);
+        var one = str.slice(0, cur), two = str.slice(cur);
         str = (one + obj.src + two)
       }else{
         str+=obj.src;
@@ -237,7 +242,7 @@ Page({
     data.nickName=JSON.stringify(narr);
     // free.idcfengye.com:10293
     // www.naluoxiu.com:29150
-    this.con = new Lwconect("wss://www.naluoxiu.com:8001",data,this);
+    this.con = new Lwconect("wss://www.leizu.me:8001?name="+data.nickName+"&&userid="+data.avatarUrl,data,this);
   },
   sendfn(res){
     var str=this.data.strval;
@@ -299,7 +304,9 @@ Page({
   onReachBottom: function () {
 
   },
-
+  onUnload(){
+    this.con._socketClose();
+  },
   /**
    * 用户点击右上角分享
    */

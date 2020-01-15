@@ -13,6 +13,17 @@
             </view>
          </view>
           -->
+          
+        <view class="fm-list" tt:if="{{show}}" wx:for="{{menu}}" wx:key="{{index}}">
+          <view class="f-l-left {{item.ishid?'rightact':'rightlea'}}" catchtap="copyTBL" data-str="{{item.val}}">{{item.text}}</view>
+          <view class="f-l-text">
+            <view class="fi-item">
+              <view class="fi-text" catchtap="menuOp" data-ind="{{index}}" >
+                {{item.name}}
+              </view>
+            </view>
+          </view>
+        </view>
         <view class="fi-item">
           <view class="fi-text" catchtap="bgsave" data-bg="{{bgu}}">
             背景
@@ -85,7 +96,7 @@
      </view>
    </view>
 </view> -->
-<!-- <lw-audio /> -->
+<lw-audio />
 
 <view class='lt-fixed' tt:if="{{show}}">
    <button bindtap="bgufn" class='fdb-btn'>

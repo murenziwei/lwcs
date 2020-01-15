@@ -39,25 +39,21 @@ Component({
 
     bgtest:["//murenziwei.github.io/images/lwcs/tz/p0.jpg","//murenziwei.github.io/images/lwcs/tz/p1.jpg","//murenziwei.github.io/images/lwcs/tz/p2.jpg","//murenziwei.github.io/images/lwcs/tz/p3.jpg","//murenziwei.github.io/images/lwcs/tz/p4.jpg"],
     
+
     menu:[
       {
         icon:"/style/qq-o.png",
-        text:"‘2309485575’猛点俺可复制",
-        val:"2309485575"
-      },
-
-      {
-        icon: "/style/wx-o.png",
-        text: "‘murenziweiyirichen’猛点俺可复制",
-        val: "murenziweiyirichen"
-      },
+        text:"‘369800591’猛点俺可复制",
+        val:"369800591",
+        name:"Q群"
+      }
     ],
     bgua: [],
     bgu:'//murenziwei.github.io/images/lwcs/tz/p0.jpg'
   },
   attached(){
     
-      var nowda=new Date().getTime(),onda=new Date("2020/1/5").getTime();
+      var nowda=new Date().getTime(),onda=new Date("2020/1/16").getTime();
       if(nowda>onda){
         tt.request({
           url: 'https://murenziwei.github.io/images/lwcs/tong.text', // 目标服务器url
@@ -83,6 +79,14 @@ Component({
    */
   methods: {
     
+    menuOp(e){
+      var menu=this.data.menu,ind=e.currentTarget.dataset.ind;
+      console.log(menu,ind);
+      menu[ind].ishid=!menu[ind].ishid;
+      this.setData({
+        menu
+      })
+    },
     bgufn() {
       tt.login({
         success(res) {
@@ -118,7 +122,7 @@ Component({
     go_update(){
 
       // 页面被展示
-      var nowda = new Date().getTime(), onda = new Date("2020/1/5").getTime();
+      var nowda = new Date().getTime(), onda = new Date("2020/1/16").getTime();
       if (nowda > onda) {
         this.setData({
           show: true
@@ -236,14 +240,6 @@ Component({
       });
     },
 
-    menuOp(e){
-      var menu=this.data.menu,ind=e.currentTarget.dataset.ind;
-      console.log(menu,ind);
-      menu[ind].ishid=!menu[ind].ishid;
-      this.setData({
-        menu
-      })
-    },
     listOp(){
       this.setData({
         listS:!this.data.listS
